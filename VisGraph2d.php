@@ -24,7 +24,7 @@ class VisGraph2d extends Widget
         $this->options['id'] = $id = $this->getId();
         $data = Json::encode($this->items);
         $visOptions = $this->visOptions?Json::encode($this->visOptions):'{}';
-        $jsCode = "new vis.Graph2d(document.getElementById('$id',$data,$visOptions));";
+        $jsCode = "new vis.Graph2d(document.getElementById('$id'),$data,$visOptions);";
         $this->view->registerJs($jsCode);
         return Html::tag('div','',$this->options);
     }

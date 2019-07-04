@@ -24,7 +24,7 @@ class VisGraph3d extends Widget
         $this->options['id'] = $id = $this->getId();
         $data = Json::encode($this->items);
         $visOptions = $this->visOptions?Json::encode($this->visOptions):'{}';
-        $jsCode = "new vis.Graph3d(document.getElementById('$id',new vis.DataSet($data),$visOptions));";
+        $jsCode = "new vis.Graph3d(document.getElementById('$id'),new vis.DataSet($data),$visOptions);";
         $this->view->registerJs($jsCode);
         return Html::tag('div','',$this->options);
     }

@@ -28,7 +28,7 @@ class VisNetwork  extends Widget
             'edges'=>$this->edges,
         ]);
         $visOptions = $this->visOptions?Json::encode($this->visOptions):'{}';
-        $jsCode = "new vis.Network(document.getElementById('$id',$data,$visOptions));";
+        $jsCode = "new vis.Network(document.getElementById('$id'),$data,$visOptions);";
         $this->view->registerJs($jsCode);
         return Html::tag('div','',$this->options);
     }
